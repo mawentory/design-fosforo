@@ -1,0 +1,105 @@
+/*
+ * Phosphor — Amber CRT terminal.
+ *
+ * The complete token set. Every rule in design.css reads from these names,
+ * so this file is the whole visual identity: change a value here and the
+ * entire gallery follows.
+ *
+ * The second block below holds derived accessibility values. Each one is
+ * the designer's colour pushed toward the opposite end of the ramp until it
+ * clears its WCAG minimum against every surface it can land on -- page,
+ * sheet, and the tinted fills of badges and diff lines. They are generated
+ * and checked, not hand-picked; see build/verify.py in the design tooling.
+ */
+
+[data-theme="fosforo"] {
+  --paper: #0b0a07;
+  --paper-2: #060503;
+  --sheet: #14110a;
+  --ink: #ffd08a;
+  --ink-2: #c9a468;
+  --ink-3: #8f7644;
+  --rule: #352f22;
+  --signal: #ff9e1b;
+  --signal-soft: #ffd79a;
+  --signal-hover: #ffb84d;
+  --ink-hover: #ffe7bf;
+  --add: #7ce38b;
+  --del: #ff6b6b;
+  --board: #050503;
+  --board-deep: #030302;
+  --board-2: #171308;
+  --board-rule: #2e2a1c;
+  --board-text: #ffd08a;
+  --board-dim: #7a6640;
+  --ok-board: #7ce38b;
+  --err-board: #ff8f7a;
+  --code-str: #ffd79a;
+  --code-add-bg: color-mix(in srgb, #7ce38b 14%, transparent);
+  --code-add-fg: #9df0a8;
+  --code-del-bg: color-mix(in srgb, #ff6b6b 14%, transparent);
+  --code-del-fg: #ff9c9c;
+  --code-del-text: #b98a7a;
+  --line-openai: #ffb347;
+  --line-anthropic: #ff7a45;
+  --line-google: #9dd67a;
+  --line-mistral: #c9a468;
+  --line-deepseek: #ffd166;
+  --font: "IBM Plex Mono", ui-monospace, "Cascadia Mono", monospace;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", monospace;
+  --display: var(--mono);
+  --display-weight: 600;
+  --display-tracking: 0.02em;
+  --display-tracking-lg: 0.02em;
+  --display-tracking-tight: 0.02em;
+  --display-transform: uppercase;
+  --btn-weight: 600;
+  --btn-tracking: 0.08em;
+  --btn-transform: uppercase;
+  --r-sm: 0;
+  --r-md: 0;
+  --r-lg: 0;
+  --r-pill: 0;
+  --bw: 1px;
+  --rule-w: 1px;
+  --bw-heavy: 2px;
+  --rule-style: solid;
+  --shadow-card: 0 0 0 1px color-mix(in srgb, var(--ink) 30%, transparent), 0 0 26px -8px var(--signal);
+  --shadow-btn: 0 0 14px -6px var(--signal);
+  --shadow-btn-hover: 0 0 20px -4px var(--signal);
+  --shadow-panel: none;
+  --btn-hover-transform: none;
+  --panel-blur: none;
+  --section-y: clamp(56px, 8vw, 104px);
+  --size-base: 1.0625rem;
+  --texture: repeating-linear-gradient( 180deg, color-mix(in srgb, var(--ink) 5%, transparent) 0 1px, transparent 1px 3px );
+  --texture-size: auto;
+  --texture-position: 0 0;
+  --texture-repeat: repeat;
+  --texture-attachment: scroll;
+  --accent-2: #7ce38b;
+  --accent-3: #ff9e1b;
+
+  /* Derived for contrast; see the note above. */
+  --add-text: #7ce38b;
+  --board-add-text: #9df0a8;
+  --board-code-text: #ffd79a;
+  --board-del-text: #b98a7a;
+  --board-dim-text: #867452;
+  --board-key-text: #ffd79a;
+  --del-text: #ff6b6b;
+  --focus-ring: #ff9e1b;
+  --ink-3-text: #917948;
+  --on-ink-muted: #6d5c39;
+  --on-signal: #0a0a0a;
+  --signal-soft-text: #0a0a0a;
+  --signal-text: #ff9e1b;
+
+  color-scheme: dark;
+}
+
+/* ---------- Identity rules that are not tokens ---------- */
+[data-theme="fosforo"] .code,
+[data-theme="fosforo"] .chart {
+  filter: drop-shadow(0 0 7px color-mix(in srgb, var(--signal) 35%, transparent));
+}
